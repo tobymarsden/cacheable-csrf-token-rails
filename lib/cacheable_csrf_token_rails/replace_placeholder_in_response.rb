@@ -17,8 +17,6 @@ module CacheableCsrfTokenRails
         listener.on_placeholder_expected_and_not_found(env, token, response)
       end
 
-      headers['Content-Length'] = (body.body.respond_to?(:bytesize) ? body.body.bytesize : body.body.size).to_s
-
       [status, headers, body]
     end
 
